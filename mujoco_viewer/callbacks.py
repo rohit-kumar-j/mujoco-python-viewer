@@ -132,7 +132,7 @@ class Callbacks:
         elif key == glfw.KEY_BACKSPACE:
             self._reload = not self._reload
             if self.xml_path is not None:
-                self.model = mujoco.from_xml_string(self.xml_path)
+                self.model = mujoco.MjModel.from_xml_path(self.xml_path)
                 self.data = mujoco.MjData(self.model)
             mujoco.mj_resetData(self.model, self.data)
             mujoco.mj_forward(self.model, self.data)
