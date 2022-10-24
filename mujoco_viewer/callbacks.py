@@ -131,8 +131,9 @@ class Callbacks:
         # RELOAD SIMULATION
         elif key == glfw.KEY_BACKSPACE:
             self._reload = not self._reload
-            self.model = mujoco.from_xml_string(self.xml_path)
-            self.data = mujoco.MjData(self.model)
+            if self.xml_path is not None:
+                self.model = mujoco.from_xml_string(self.xml_path)
+                self.data = mujoco.MjData(self.model)
             mujoco.mj_resetData(self.model, self.data)
             mujoco.mj_forward(self.model, self.data)
             print("Reloading sim... backspace is pressed!")

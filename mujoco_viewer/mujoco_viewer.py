@@ -13,7 +13,7 @@ class MujocoViewer(Callbacks):
         self,
         model,
         data,
-        xml_path,
+        xml_path=None,
         mode="window",
         title="mujoco-python-viewer",
         width=None,

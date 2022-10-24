@@ -48,7 +48,7 @@ model = mujoco.MjModel.from_xml_string(MODEL_XML)
 data = mujoco.MjData(model)
 
 # create the viewer object
-viewer = mujoco_viewer.MujocoViewer(model, data, hide_menus=True)
+viewer = mujoco_viewer.MujocoViewer(model, data)
 
 f_render_list = [
     ["hinge_1", "pos_servo_1", "force_at_hinge_1"],
